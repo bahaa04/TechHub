@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechHub - Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="hero">
+        <h2>Welcome to TechHub</h2>
+        <p>Your one-stop shop for premium tech accessories</p>
+        <a href="/products.html" class="btn">Shop Now</a>
+      </div>
+      <h2 class="section-title">Featured Products</h2>
+      <div id="featured" class="product-grid"></div>
+    </div>
+  </main>
+  <script src="/layout.js"></script>
+  <script>
+    fetch('/api/products').then(r => r.json()).then(products => {
+      document.getElementById('featured').innerHTML = products.slice(0, 3).map(p => `
+        <div class="product-card" onclick="location.href='/products.html'">
+          ${p.emoji ? `<div class="product-emoji">${p.emoji}</div>` : '<div class="product-fallback"></div>'}
+          <h3>${p.name}</h3>
+          <p>${p.description || ''}</p>
+          <div class="product-price">$${p.price}</div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

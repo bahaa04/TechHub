@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - TechHub</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <h2 class="section-title">All Products</h2>
+      <div id="products" class="product-grid"></div>
+    </div>
+  </main>
+  <script src="/layout.js"></script>
+  <script>
+    fetch('/api/products').then(r => r.json()).then(products => {
+      document.getElementById('products').innerHTML = products.map(p => `
+        <div class="product-card">
+          ${p.emoji ? `<div class="product-emoji">${p.emoji}</div>` : '<div class="product-fallback"></div>'}
+          <h3>${p.name}</h3>
+          <p>${p.description || ''}</p>
+          <div class="product-price">$${p.price}</div>
+          <button class="btn btn-primary" onclick="addToCart('${p.id}')">Add to Cart</button>
+        </div>
+      `).join('');
+    });
+
+    function addToCart(id) {
+      fetch('/api/cart', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: id, qty: 1 })
+      }).then(() => {
+        alert('Added to cart!');
+        location.reload();
+      });
+    }
+  </script>
+</body>
+</html>

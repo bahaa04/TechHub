@@ -1,0 +1,9 @@
+node_modules
+serviceAccount.json
+.env
+logs
+*.log
+.DS_Store
+Thumbs.db
+.vscode
+.idea
