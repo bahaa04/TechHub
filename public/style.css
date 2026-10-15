@@ -30,7 +30,7 @@ header .container {
 
 header h1 {
   font-size: 24px;
-  color: #5e35b1;
+  color: #6a1b9a;
 }
 
 nav {
@@ -46,10 +46,10 @@ nav a {
   transition: color 0.2s;
 }
 
-nav a:hover { color: #5e35b1; }
+nav a:hover { color: #6a1b9a; }
 
 .badge {
-  background: #5e35b1;
+  background: #6a1b9a;
   color: white;
   border-radius: 12px;
   padding: 2px 8px;
@@ -83,7 +83,7 @@ footer {
 .btn {
   display: inline-block;
   background: white;
-  color: #5e35b1;
+  color: #6a1b9a;
   padding: 12px 32px;
   border-radius: 24px;
   text-decoration: none;
@@ -100,7 +100,7 @@ footer {
 }
 
 .btn-primary {
-  background: #5e35b1;
+  background: #6a1b9a;
   color: white;
 }
 
@@ -168,7 +168,7 @@ footer {
 .product-price {
   font-size: 24px;
   font-weight: 700;
-  color: #5e35b1;
+  color: #6a1b9a;
   margin-bottom: 16px;
 }
 
@@ -204,7 +204,7 @@ footer {
 
 .cart-total h3 {
   font-size: 28px;
-  color: #5e35b1;
+  color: #6a1b9a;
   margin-bottom: 16px;
 }
 
@@ -224,7 +224,7 @@ footer {
 }
 
 .about-content h2 {
-  color: #5e35b1;
+  color: #6a1b9a;
   margin-bottom: 24px;
 }
 
@@ -275,7 +275,7 @@ footer {
 
 .form-group input:focus {
   outline: none;
-  border-color: #5e35b1;
+  border-color: #6a1b9a;
 }
 
 .form-row {
@@ -326,7 +326,7 @@ footer {
   padding-top: 16px;
   font-size: 20px;
   font-weight: 700;
-  color: #5e35b1;
+  color: #6a1b9a;
 }
 
 @media (max-width: 768px) {
